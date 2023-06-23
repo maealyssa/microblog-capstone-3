@@ -1,18 +1,23 @@
 /* Global CSS for all pages */
-
-* {
-    /* Sizing helper: See Workbook 1b, page 2-33. */
-    box-sizing: border-box;
-
-    /* 
-       Vizualization helper: While styling or debugging your HTML & CSS, 
-       uncomment the rule below to see all the boxes on your page more
-       clearly! (Remove this outline before submitting: users won't 
-       want to see it!)
-    */
-    /* outline: 1px dotted red; */
+ 
+body {
+    background: #f8f9fa;
 }
 
-:root {
-    font-size: 1rem;
+.navbar.navbar-expand-lg.navbar-light {
+    background-color: #262626;
+    height: 3rem;
 }
+
+.nav-item .nav-link {
+    text-align: center;
+    font-family: sans-serif;
+    color: #dad7cd;
+    font-weight: lighter;
+}
+
+.nav-item .nav-link:hover {
+    background-color: #f8f9fa;
+    color:#262626
+}
+
