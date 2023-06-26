@@ -22,7 +22,22 @@
             <a class="nav-item nav-link" href="registration.html">Register</a>
             <a class="nav-item nav-link" href="posts.html">Posts</a>
             <a class="nav-item nav-link active" href="profile.html">Profile</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Membership</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
+                </ul>
+            </li>
         </div>
+        
     </nav>
   </header>
   <main>
@@ -77,6 +92,15 @@
   <footer>
     <!-- place footer here -->
   </footer>
+  <!-- <script src="scripts/auth.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (!isLoggedIn()) {
+      window.location.href = "registration.html";
+    }
+  });
+  </script> -->
+
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
