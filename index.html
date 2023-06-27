@@ -25,7 +25,7 @@
         <title>Head Space</title>
 
         <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-        <script src="./auth.js"></script>
+        <script src="scripts/auth.js"></script>
         <script>
             if (isLoggedIn() === true) window.location.replace("/posts");
         </script>
@@ -66,15 +66,15 @@
                 <form id="login">
                     <div class="mb-3">
                         <label class="form-label" for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email Address" required>
+                        <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email Address" required>
                         <!-- <div class="valid-feedback">Good! Your email address looks valid.</div> -->
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="inputPassword">Password</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+                        <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password" required>
                         <!-- <div class="invalid-feedback">Opps! You have entered an invalid password.</div> -->
                     </div>
-                    <button type="submit" class="btn btn-dark">Sign in</button>
+                    <button name="loginButton" type="submit" class="btn btn-dark">Sign in</button>
                 </form>
             </div>
 
