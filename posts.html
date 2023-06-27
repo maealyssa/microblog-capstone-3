@@ -28,26 +28,25 @@
     <script>
         if (isLoggedIn() === false) window.location.replace("/");
     </script>
+
 </head>
 
 <body>
   <header>
-    <!-- place navbar here -->
-    <nav class="navbar navbar-expand">
-        <div class="nav navbar-nav">
-            <a class="nav-item nav-link" href="index.html"><i class="fa fa-home"></i> HOME</a>
-            <a class="nav-item nav-link" href="registration.html"><i class="fa fa-user-plus"></i> SIGN UP</a>
-            <a class="nav-item nav-link" href="posts.html"><i class="fa fa-commenting-o"></i> POSTS</a>
-            <a class="nav-item nav-link" href="profile.html"><i class="fa fa-user-circle-o"></i> PROFILES</a>
-        </div>
-    </nav>
-  </header>
-  <main>
 
+  </header>
+
+  <main>
+    <button id="logout">Log Out</button>
+    <div id="posts"></div>
   </main>
+
   <footer>
     <!-- place footer here -->
   </footer>
+
+  <script src="scripts/posts.js"></script>
+
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
