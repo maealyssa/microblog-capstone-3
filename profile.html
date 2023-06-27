@@ -11,7 +11,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-     <!-- <script src="scripts/auth.js"></script>
+  <!--CSS Link-->
+<link rel="stylesheet" href="styles/profile.css">
+
+  
+<!-- <script src="scripts/auth.js"></script>
   <script>
   document.addEventListener("DOMContentLoaded", function() {
     if (!isLoggedIn()) {
@@ -50,53 +54,61 @@
     </nav>
   </header>
   <main>
-    <div class="container mt-5">
-      <div class="row">
-          <div class="col-md-4">
-              <img class="img-fluid rounded-circle" src="profile_pic_url" alt="Profile Picture">
-              <h2 class="text-center">Username</h2>
-              <p class="text-center">Some information about the user...</p>
-              <h5>Badges:</h5>
-              <p></p>
-              <h5>Location:</h5>
-              <p></p>
-              <h5>Hobbies:</h5>
-              <p></p>
-              <a href="posts.html" class="btn btn-primary btn-block">View All Posts</a><br>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newPostModal">
-                Create New Post
-              </button>
-          </div>
-          <div class="col-md-8">
-              <ul class="nav nav-tabs">
-                  <li class="nav-item">
-                      <a class="nav-link" href="#following" data-toggle="tab">Following (20)</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#followers" data-toggle="tab">Followers (200)</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#Likes" data-toggle="tab">Likes (100)</a>
-                </li>
-              </ul>
-              <div class="tab-content">
-                  <div class="tab-pane active" id="textPosts">
-                      <h5 class="mt-3">Recent Text Posts</h5>
-                  </div>
-                  <div class="tab-pane" id="picturePosts">
-                      <h5 class="mt-3">Recent Picture Posts</h5>
-                  </div>
-                  <div class="tab-pane" id="following">
-                      <h5 class="mt-3">People You're Following</h5>
-                  </div>
-                  <div class="tab-pane" id="followers">
-                      <h5 class="mt-3">Your Followers</h5>
-                  </div>
+    <main>
+      <div class="container-fluid mt-5">
+        <div class="row">
+          <!-- Left column -->
+          <div class="col-md-2">
+            <div class="d-flex flex-column vh-100">
+              <!-- User information -->
+              <div class="mb-3">
+                <img class="img-fluid rounded-circle" src="data:image/jpeg;base64,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">
+                <h5 class="text-center">Username</h5>
+                <p class="text-center">Some information about the user...</p>
+                <h5>Badges:</h5>
+                <p></p>
+                <h5>Location:</h5>
+                <p></p>
+                <h5>Hobbies:</h5>
+                <p></p>
+                <a href="posts.html" class="btn btn-primary btn-block">View All Posts</a><br>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newPostModal">Create New Post</button>
               </div>
-              <h5 class="mt-3">Stories You Might Be Interested In</h5>
+              <!-- Following, followers, and likes -->
+              <div class="card mt-auto">
+                <div class="card-body">
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#following" data-toggle="tab" data-count="20">Following</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#followers" data-toggle="tab" data-count="200">Followers</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#Likes" data-toggle="tab" data-count="100">Likes</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
+          <!-- Center column -->
+          <div class="col-md-8">
+            <!-- Share new post -->
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">What would you like to share today?</h5>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newPostModal">Post</button>
+              </div>
+            </div>
+            <!-- Posts feed -->
+            <div id="postsFeed" class="card">
+              <!-- Populate with posts using JavaScript -->
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+        </div>
       </div>
-  </div>
   <!-- Modal -->
   <div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -165,6 +177,22 @@
         console.warn('Something went wrong.', error);
       }
     }
+  </script>
+  <script>
+    // Fetch posts from the API
+    fetch('https://microbloglite.herokuapp.com/api/posts')
+      .then(response => response.json())
+      .then(posts => {
+        const postsFeed = document.getElementById('postsFeed');
+        posts.forEach(post => {
+          // Create a new post card
+          const postCard = document.createElement('div');
+          postCard.className = 'card-body';
+          postCard.innerHTML = `<h5 class="card-title">${post.user}</h5><p class="card-text">${post.text}</p>`;
+          // Add the post card to the feed
+          postsFeed.appendChild(postCard);
+        });
+      });
   </script>
   
 </body>
