@@ -11,6 +11,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+     <!-- <script src="scripts/auth.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (!isLoggedIn()) {
+      window.location.href = "registration.html";
+    }
+  });
+  </script> -->
+
 </head>
 
 <body>
@@ -53,22 +62,22 @@
               <p></p>
               <h5>Hobbies:</h5>
               <p></p>
-              <a href="posts.html" class="btn btn-primary btn-block">View All Posts</a>
+              <a href="posts.html" class="btn btn-primary btn-block">View All Posts</a><br>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newPostModal">
+                Create New Post
+              </button>
           </div>
           <div class="col-md-8">
               <ul class="nav nav-tabs">
                   <li class="nav-item">
-                      <a class="nav-link active" href="#textPosts" data-toggle="tab">Text Posts</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#picturePosts" data-toggle="tab">Picture Posts</a>
-                  </li>
-                  <li class="nav-item">
                       <a class="nav-link" href="#following" data-toggle="tab">Following (20)</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="#followers" data-toggle="tab">Followers (100)</a>
+                      <a class="nav-link" href="#followers" data-toggle="tab">Followers (200)</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#Likes" data-toggle="tab">Likes (100)</a>
+                </li>
               </ul>
               <div class="tab-content">
                   <div class="tab-pane active" id="textPosts">
@@ -88,18 +97,39 @@
           </div>
       </div>
   </div>
+  <!-- Modal -->
+  <div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newPostModalLabel">New Post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="postForm" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="postBody">Post Content</label>
+              <textarea class="form-control" id="postBody" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="postImage">Post Image</label>
+              <input type="file" class="form-control-file" id="postImage">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="submitPost()">Post</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   </main>
   <footer>
     <!-- place footer here -->
   </footer>
-  <!-- <script src="scripts/auth.js"></script>
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    if (!isLoggedIn()) {
-      window.location.href = "registration.html";
-    }
-  });
-  </script> -->
+ 
 
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -109,6 +139,34 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
+  <script>
+    async function submitPost() {
+      const postBody = document.getElementById('postBody').value;
+      const postImage = document.getElementById('postImage').files[0];
+      
+      let formData = new FormData();
+      formData.append('text', postBody);
+      formData.append('image', postImage);
+  
+      try {
+        const response = await fetch('https://microbloglite.herokuapp.com/api/posts', {
+          method: 'POST',
+          body: formData
+        });
+  
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+  
+        const data = await response.json();
+        console.log(data);
+        // Refresh your page or do something with the response
+      } catch (error) {
+        console.warn('Something went wrong.', error);
+      }
+    }
+  </script>
+  
 </body>
 
 </html>
