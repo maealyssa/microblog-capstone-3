@@ -1,5 +1,4 @@
-<style>
-    .nav-tabs .nav-link {
+.nav-tabs .nav-link {
         color: #888; /* Light gray color */
         font-size: 0.8em; /* Smaller text */
         border: none !important;
@@ -16,4 +15,16 @@
     .nav-tabs .nav-item:not(:last-child) {
         border-right: 1px solid #ccc; /* Faint gray line */
     }
-</style>
+
+    #center-col {
+        background-image: url('https://images5.alphacoders.com/112/thumb-1920-1123013.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 15px; /* you can adjust as needed */
+      }
+      
+      .card {
+        margin: 15px; /* add space around the cards */
+      }
+
+      
