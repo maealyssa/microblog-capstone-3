@@ -23,6 +23,6 @@ function newUser() {
         },
         body: JSON.stringify(requestBody)
     })
-        .then(response => response.json())
-        .then(window.location.href='index.html')
+        .then(() => window.location.href = 'index.html')
+        .catch(err => console.log(err))
 };
