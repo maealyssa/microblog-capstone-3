@@ -4,20 +4,14 @@ body {
     background: #f8f9fa;
 }
 
-.navbar.navbar-expand-lg.navbar-light {
-    background-color: #262626;
-    height: 3rem;
+/* navbar */
+
+.navbar.navbar-expand-lg.navbar-dark.bg-black.static-top {
+    box-shadow: 0px 5px grey;
 }
 
 .nav-item .nav-link {
     text-align: center;
-    font-family: sans-serif;
-    color: #dad7cd;
-    font-weight: lighter;
+    color: #ffbd59;
+    font-size: x-large;
 }
-
-.nav-item .nav-link:hover {
-    background-color: #f8f9fa;
-    color:#262626
-}
-

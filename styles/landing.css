@@ -1,1 +1,12 @@
 /* Landing Page CSS */
+
+.container.sign-in-form {
+    margin-top: 5rem;
+    width: 50%;
+    border-style: solid;
+    padding: 2rem;
+    font-family: impact, sans-serif;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 10px 10px grey;
+}
