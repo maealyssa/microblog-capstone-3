@@ -1,30 +1,30 @@
 .nav-tabs .nav-link {
-        color: #888; /* Light gray color */
-        font-size: 0.8em; /* Smaller text */
+        color: #888;
+        font-size: 0.8em; 
         border: none !important;
     }
     
     .nav-tabs .nav-link::before {
         content: attr(data-count);
-        color: #000; /* Bold black color */
-        font-size: 1.2em; /* Larger text */
-        font-weight: bold; /* Bold font */
-        display: block; /* Display as block to put it above the text */
+        color: #000; 
+        font-size: 1.2em; 
+        font-weight: bold; 
+        display: block; 
     }
     
     .nav-tabs .nav-item:not(:last-child) {
-        border-right: 1px solid #ccc; /* Faint gray line */
+        border-right: 1px solid #ccc; 
     }
 
     #center-col {
-        background-image: url('https://images5.alphacoders.com/112/thumb-1920-1123013.jpg');
+        background-image: url('/video/HD-wallpaper-moon-surface-astronaut-earth-galaxy-stars-space.jpg');
         background-repeat: no-repeat;
         background-size: cover;
-        padding: 15px; /* you can adjust as needed */
+        padding: 15px; 
       }
       
       .card {
-        margin: 15px; /* add space around the cards */
+        margin: 15px;
       }
 
       
