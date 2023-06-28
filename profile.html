@@ -181,7 +181,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
-  <script>
+  <!-- <script>
     async function submitPost() {
       const postBody = document.getElementById('postBody').value;
       const postImage = document.getElementById('postImage').files[0];
@@ -219,8 +219,38 @@
           postsFeed.appendChild(postCard);
         });
       });
-  </script>
+  </script> -->
+
+  <script>
+  const displayPosts = async () => {
+    const posts = await fetchPosts();
+    for (const { createdAt, likes, text, username } of posts)
+      qS('#posts').innerHTML += `
+        <div>
+          <span>${username}</span>
+          <span>${text}</span>
+        </div>
+        <div>
+          <span>${createdAt}</span>
+          <span>${likes.length}</span>
+        </div>
+        <br>
+      `;
+  };
   
+  const fetchPosts = async () => {
+    // console.log('getLoginData():', getLoginData())
+    try {
+      const resp = await fetch('https://microbloglite.herokuapp.com/api/posts', {
+        headers: { Authorization: `Bearer ${getLoginData().token}` }
+      });
+      return resp.json();
+    } catch(err) {
+      console.log(err);
+      return [];
+    }
+  };
+</script>
 </body>
 
 </html>
