@@ -25,9 +25,9 @@
         <title>Head Space</title>
 
         <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-        <script src="scripts/auth.js"></script>
+        <script src="./auth.js"></script>
         <script>
-            if (isLoggedIn() === true) window.location.replace("/posts");
+            if (isLoggedIn() === true) window.location.replace("/posts.html");
         </script>
     </head>
 
@@ -61,6 +61,7 @@
         </header>
 
         <main>
+
             <!-- SIGN IN FORM -->
             <div class="container-fluid d-flex">
                 <img class="moonImg" src="images/moonAndStars.png" alt="" height="500">
@@ -82,7 +83,6 @@
                             <button type="submit" class="btn btn-outline-dark">log in</button>
                         </form>
                     </div>
-
                     <!-- ABOUT INFO -->
                     <div class="col">
                         <h1 class="aboutSection">About Head Space</h1>
