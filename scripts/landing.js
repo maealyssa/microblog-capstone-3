@@ -3,18 +3,15 @@
 "use strict";
 
 window.onload = () => {
-    const loginBtn = document.getElementById("login");
-    const inputUser = document.getElementById("inputUserName").value;
-    const inputPassword = document.getElementById("inputPassword").value;
+    const form = document.getElementById("login");
 
-    loginBtn.onsubmit = () => {
-        const loginData = {
-            username: inputUser,
-            password: inputPassword,
-        }
+    form.onsubmit = e => {
+        e.preventDefault();
 
-        loginBtn.disabled = true;
-        
-        login(loginData);
+        const username = document.getElementById("inputUserName").value;
+        const password = document.getElementById("inputPassword").value;
+
+        login({ username, password });
+        document.getElementById("loginButton").disabled = true;
     }
 }
