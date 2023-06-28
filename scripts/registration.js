@@ -26,3 +26,4 @@ function newUser() {
         .then(() => window.location.href = 'index.html')
         .catch(err => console.log(err))
 };
+
