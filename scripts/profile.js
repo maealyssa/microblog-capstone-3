@@ -5,9 +5,9 @@ const getCurrentUser = () => {
     return user ? user.username : null;
 }
 
-const fetchPosts = async () => {
+const fetchPostsFromUser = async () => {
     try {
-        const resp = await fetch('https://microbloglite.herokuapp.com/api/posts', {
+        const resp = await fetch(`https://microbloglite.herokuapp.com/api/posts?username=${getCurrentUser()}`, {
             headers: { Authorization: `Bearer ${getLoginData().token}` }
         });
         return resp.json();
@@ -18,26 +18,25 @@ const fetchPosts = async () => {
 };
 
 const displayPosts = async () => {
-    const posts = await fetchPosts();
+    const posts = await fetchPostsFromUser();
+    posts.reverse();
+
     const postsFeed = document.getElementById('postsFeed');
-    const currentUser = getCurrentUser();
 
     for (const { createdAt, likes, text, username } of posts) {
-        if (username === currentUser) {
-            const postCard = document.createElement('div');
-            postCard.className = 'card mb-3'; 
-            postCard.innerHTML = `
-                <div class="card-body">
-                    <h5 class="card-title">${username}</h5>
-                    <p class="card-text">${text}</p>
-                    <p class="card-text">
-                        <small class="text-muted">${new Date(createdAt).toLocaleString()}</small>
-                    </p>
-                    <p class="card-text">${likes.length} likes</p>
-                </div>
-            `;
-            postsFeed.appendChild(postCard);
-        }
+        const postCard = document.createElement('div');
+        postCard.className = 'card mb-3'; 
+        postCard.innerHTML = `
+            <div class="card-body">
+                <h5 class="card-title">${username}</h5>
+                <p class="card-text">${text}</p>
+                <p class="card-text">
+                    <small class="text-muted">${new Date(createdAt).toLocaleString()}</small>
+                </p>
+                <p class="card-text">${likes.length} likes</p>
+            </div>
+        `;
+        postsFeed.appendChild(postCard);
     }
 };
 
@@ -74,17 +73,18 @@ const submitPost = async () => {
   const postBody = document.getElementById('postBody').value;
   const data = {
     text: postBody,
-    username: getCurrentUser()
+    username: getCurrentUser(),
   };
   try {
-    const response = await fetch('https://microbloglite.herokuapp.com/api/posts',{
+    await fetch('https://microbloglite.herokuapp.com/api/posts',{
       method: 'POST',
       headers: {
-        'content-Type': 'application/json',
-        Authorization: `Bearer ${getLoginData().token}` },
-        body: JSON.stringify(data)
-    }); 
-console.log(response)
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${getLoginData().token}` 
+      },
+      body: JSON.stringify(data)
+    });
+    window.location.href = 'profile.html';
   } catch(err) {
     console.log(err);
     alert('something went wrong while posting')
