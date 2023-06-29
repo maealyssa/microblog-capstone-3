@@ -31,16 +31,14 @@
     font-family: impact, sans-serif;
     -webkit-text-stroke: 1px black;
     color: #ffbd59;
-    margin-top: 20%;
-    margin-left: 10%;
+    margin-top: 15%;
     font-size: 75px;
 }
 
 .aboutP {
     font-family: "montserrat", sans-serif;
     width: 60%;
-    margin-left: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 20%;
 } 
 
 .aboutDiv {
