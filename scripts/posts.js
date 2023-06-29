@@ -24,6 +24,8 @@ window.onload = async () => {
 
 const displayPosts = async () => {
   const posts = await fetchPosts();
+  posts.reverse();
+
   for (const { createdAt, likes, text, username } of posts)
     qS('#posts').innerHTML += `
       <div class="col-12">
@@ -34,7 +36,7 @@ const displayPosts = async () => {
           <br>
           <p class="lead text-center">${text}</p>
           <hr>
-          <span class="text-muted"> <i class="fa fa-heart"></i> ${likes.length} Likes ${createdAt}</span>
+          <span class="text-muted"> <i class="fa fa-heart"></i> ${likes.length} Likes ${new Date(createdAt).toLocaleString()}</span>
         </div>
       </div>
 

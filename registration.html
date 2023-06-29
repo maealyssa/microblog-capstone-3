@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Head Space</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,8 +15,6 @@
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <link rel="stylesheet" href="styles/global.css">
 
-    <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="styles/landing.css">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +27,7 @@
 <body>
   <header>
     <!-- Navigation -->
+    <div id="test" > hUllO </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-black static-top">
       <div class="container">
           <img src="images/headSpace.png" alt="..." height="100">
@@ -55,36 +55,36 @@
   </header>
 
   <main>
-    <section class="h-100 bg-dark">
+    <form id="SignUp" >
       <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col">
+        <!-- <div class="row d-flex justify-content-center align-items-center h-100"> -->
+          <!-- <div class="col"> -->
             <div class="card card-registration my-4">
               <div class="row g-0">
                 <div class="col-xl-6 d-none d-xl-block">
-                  <img src="images/constellations.img.png" alt="our constellations img" class="img-fluid"
-        style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
-                </div>
+                  <img src="images/constellations.img.png" alt="our constellations img" class="img-fluid"/>
+                  
+                </div> 
                 <div id="registrationForm" class="col-xl-6">
-                  <div class="card-body p-md-5 text-black">
-                    <h3 class="mb-5 text-uppercase">Sign Up</h3>
+                  <div class="card-body ">
+                    <h3 class="mb-5 text">Sign Up</h3>
 
                     <div class="row">
                       <div class="form-outline mb-4">
                         <div class="form-outline">
-                          <input type="text" id="fullName" class="form-control form-control-lg" />
-                          <label class="form-label" for="fullName">Full name</label>
+                          <input type="text" id="fullName" class="form-control form-control-lg" placeholder="Full name"/>
+                          <label class="form-label" for="fullName" ></label>
                         </div>
                       </div>
 
                       <div class="form-outline mb-4">
-                        <input type="text" id="UserName" class="form-control form-control-lg" placeholder="username" />
+                        <input type="text" id="UserName" class="form-control form-control-lg" placeholder="Username" />
 
                       </div>
 
                       <div class="form-outline mb-4">
-                        <input type="text" id="password" class="form-control form-control-lg" />
-                        <label class="form-label" for="password">Password</label>
+                        <input type="text" id="password" class="form-control form-control-lg" placeholder="Password" />
+                        <label class="form-label" for="password"></label>
                       </div>
 
                       <div class="d-flex justify-content-pt-3">
@@ -96,7 +96,9 @@
                   </div>
                 </div>
               </div>
-    </section>
+            </div>
+    </div>
+            </form>
   </main>
   <footer>
     <!-- place footer here -->
