@@ -30,6 +30,7 @@ const displayPosts = async () => {
             <div class="card-body">
                 <h5 class="card-title">${username}</h5>
                 <p class="card-text">${text}</p>
+                <hr>
                 <p class="card-text">
                     <small class="text-muted">${new Date(createdAt).toLocaleString()}</small>
                 </p>
@@ -61,7 +62,7 @@ const displayUsers = async () => {
         userCard.className = 'card my-2';
         userCard.innerHTML = `
             <div class="d-flex align-items-center">
-                <img class="rounded-circle mr-3" src="images/stockImage.jpg" style="width: 50px; height: 50px;">
+                <img class="rounded-circle mr-3 user-circle" src="images/stockImage.jpg" style="width: 50px; height: 50px;">
                 <h5 class="m-0">${username}</h5>
             </div>
         `;
@@ -95,3 +96,4 @@ window.onload = () => {
     displayPosts();
     displayUsers();
 };
+

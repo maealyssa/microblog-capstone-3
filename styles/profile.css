@@ -1,3 +1,5 @@
+
+
 body, .navbar, .container-fluid {
   margin: 0 !important;
   padding: 0 !important;
@@ -27,7 +29,7 @@ body, .navbar, .container-fluid {
 }
 
 #center-col {
-  background-image: url('/video/HD-wallpaper-moon-surface-astronaut-earth-galaxy-stars-space.jpg');
+  background-color: black;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 15px;
@@ -36,6 +38,23 @@ body, .navbar, .container-fluid {
 .card {
   margin: 15px;
   transition: transform 0.2s; /* Animation */
+  border-style: solid black;
+  padding: 3rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 7px 7px #ffbd59;
+  z-index: 2;
+  font-family: "montserrat", sans-serif;
+}
+
+.card.mb-3 {
+  border-style: solid black;
+  font-family: "montserrat", sans-serif;
+}
+
+.card.my-2 {
+  box-shadow: none !important;
+  font-family: "montserrat", sans-serif;
+  padding: 3px;
 }
 
 .card:hover {
@@ -51,7 +70,7 @@ body, .navbar, .container-fluid {
 }
 
 .nav-icon {
-  font-size: 10px;
+  font-size: x-large;
 }
 
 .rounded-circle {
@@ -62,6 +81,7 @@ body, .navbar, .container-fluid {
   margin-top: 50px; 
   transition: transform 0.2s;
   filter: grayscale(0%);
+  z-index: 1;
 }
 
 .rounded-circle:hover {
@@ -76,23 +96,29 @@ body, .navbar, .container-fluid {
   left: 1;
   right: 1;
   bottom: 59%;
-  width: 110%; 
-  z-index: -1;
+  width: 100%; 
+  z-index: 1;
 }
 
 .user-name {
   font-size: 1.5em; /* Adjust to make the username smaller */
+  font-family: "montserrat", sans-serif;
+  color: white;
 }
 
 .user-detail {
   color: gray;
   font-size: 0.8em;
+  font-family: "montserrat", sans-serif;
+  
 }
 
 .about-me, .photos, .friends {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
+  font-family: "montserrat", sans-serif;
+  color: white;
 }
 
 .image-circle {
@@ -100,6 +126,7 @@ body, .navbar, .container-fluid {
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
+  margin-top: -15px;
 }
 
 .friends-count {
@@ -112,6 +139,26 @@ body, .navbar, .container-fluid {
   display: flex;
   justify-content: center;
   align-items: center ;
-  margin-top: -0px;
+  margin-top: -15px;
+  margin-bottom: 10px;
 }
 
+.card-title{
+  font-family: "montserrat", sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.user-circle{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.search-bar {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
