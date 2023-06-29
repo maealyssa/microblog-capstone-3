@@ -24,6 +24,8 @@ window.onload = async () => {
 
 const displayPosts = async () => {
   const posts = await fetchPosts();
+  posts.reverse();
+  
   for (const { createdAt, likes, text, username } of posts)
     qS('#posts').innerHTML += `
       <div class="col-12">
