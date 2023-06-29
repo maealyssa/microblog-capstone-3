@@ -1,6 +1,11 @@
 body, .navbar, .container-fluid {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.navbar {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .nav-tabs .nav-link {
@@ -30,6 +35,11 @@ body, .navbar, .container-fluid {
 
 .card {
   margin: 15px;
+  transition: transform 0.2s; /* Animation */
+}
+
+.card:hover {
+  transform: scale(1.05); 
 }
 
 .bg-gold {
@@ -37,16 +47,69 @@ body, .navbar, .container-fluid {
 }
 
 .nav-link.nav-text {
-  font-size: 14px; /* Adjust as needed */
+  font-size: 14px; 
 }
 
 .nav-icon {
-  font-size: 10px; /* Adjust as needed */
+  font-size: 10px;
 }
 
 .rounded-circle {
-  width: 120px; /* Adjust as needed */
-  height: 120px; /* This should be the same as the width to make a perfect circle */
+  width: 120px; 
+  height: 120px; 
   border-radius: 50%;
-  object-fit: cover; /* This will ensure your image covers the whole area of the div without distortion */
+  object-fit: cover; 
+  margin-top: 50px; 
+  transition: transform 0.2s;
+  filter: grayscale(0%);
+}
+
+.rounded-circle:hover {
+  transform: scale(1.05); 
+}
+
+.profile-banner {
+  background: url('../images/stars.jpg') no-repeat center center;
+  background-size: cover; 
+  position: absolute;
+  top: 0;
+  left: 1;
+  right: 1;
+  bottom: 59%;
+  width: 110%; 
+  z-index: -1;
+}
+
+.user-name {
+  font-size: 1.5em; /* Adjust to make the username smaller */
+}
+
+.user-detail {
+  color: gray;
+  font-size: 0.8em;
+}
+
+.about-me, .photos, .friends {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.image-circle {
+  width: 60px; /* Adjust to desired size */
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.friends-count {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: gray;
+  color: white;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
