@@ -34,7 +34,7 @@
     <body>
         <header>
             <!-- Navigation -->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-black static-top">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-black">
                 <div class="container">
                     <img src="images/headSpace.png" alt="..." height="100">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,19 +63,17 @@
         <main>
 
             <!-- SIGN IN FORM -->
-            <div class="container-fluid d-flex">
-                <img class="moonImg" src="images/moonAndStars.png" alt="" height="500">
-                <img class="astroBoy" src="images/astronaut.png" height="150">
+            <div class="mainBody container-fluid">
                 <div class="row">
-                    <div class="login col-4 m-4 text-center">
-                        <h2 class="mb-4">Back?</h2>
-                        <form id="login">
+                    <div class="col bg-black">
+                        <form class="login p-4 d-flex justify-content-around" id="login">
+                            <h1 style="color: #ffbd59; -webkit-text-stroke: 1px black; font-family: impact, sans-serif;">Back?</h1>
                             <div class="single-input mb-4">
                                 <span><i class="fa fa-user"></i></span>
                                 <input type="text" class="form-control" id="inputUserName" placeholder="username" required>
                                 <!-- <div class="valid-feedback">Good! Your email address looks valid.</div> -->
                             </div>
-                            <div class="single-input mb-3">
+                            <div class="single-input mb-4">
                                 <span><i class="fa fa-unlock"></i></span>
                                 <input type="password" class="form-control" id="inputPassword" placeholder="password" required>
                                 <!-- <div class="invalid-feedback">Opps! You have entered an invalid password.</div> -->
@@ -83,18 +81,69 @@
                             <button id="loginButton" type="submit" class="btn btn-outline-dark">log in</button>
                         </form>
                     </div>
-                    <!-- ABOUT INFO -->
-                    <div class="col">
-                        <h1 class="aboutSection">About Head Space</h1>
+                </div>
+                <div class="row">
+                    <div class="col col-lg-4 d-flex">
+                        <img class="astroBoy align-self-end p-3" src="images/astronaut.png" height="250">
+                    </div>
+                      <!-- ABOUT INFO -->
+                      <div class="col col-lg-8 col-sm-12 aboutDiv">
+                        <h1 class="aboutTitle">About Head Space</h1>
                         <p class="aboutP">Picture this: four individuals with an excessive amount of forehead space and an uncontrollable urge to spread creative chaos.  We're here to shoot up some much-needed humor and artistic mayhem into your digital lives.</p>
                     </div>
                 </div>
             </div>
         </main>
-
-        <footer>
-            <div class="midSection container-fluid bg-black p-4">
-                <img src="images/headspace.png" alt="" srcset="" height="200">
+        
+        <footer class="bg-black text-center">
+            <h1 class="text-center" style="font-family: impact, sans-serif; font-size: 75px;">4HEADZ</h1>
+            <br>
+            <div class="container-fluid bg-black">
+                <div class="row">
+                    <div class="col-4 d-flex justify-content-end align-self-center">
+                        <img class="rounded-circle" src="images/elvira.jpg" alt="">
+                    </div>
+                    <div class="col-4 name d-flex justify-content-center align-self-center">
+                        <h2>ELVIRA PEREZ</h2>
+                    </div>
+                    <div class="col-4">
+                        <img class="h-75" src="images/alienAndStars.png" alt="" >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 d-flex justify-content-start align-self-baseline">
+                        <img src="images/galaxy.png" alt="" height="125">
+                    </div>
+                    <div class="col-4 name d-flex justify-content-center align-self-center">
+                        <h2>MICHAEL SHI</h2>
+                    </div>
+                    <div class="col-4 d-flex justify-content-start align-self-center">
+                        <img class="rounded-circle" src="images/michael.jpg" alt="" width="250">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 d-flex justify-content-end align-self-center">
+                        <img class="rounded-circle" src="images/isaiah.jpg" alt="" width="250">
+                    </div>
+                    <div class="col-4 name d-flex justify-content-center align-self-center">
+                        <h2>ISAIAH KIRK</h2>
+                    </div>
+                    <div class="col-4 d-flex justify-content-end">
+                        <img src="images/galaxy2.png" alt="" height="150">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <img src="images/galaxy3.png" alt="" height="300">
+                    </div>
+                    <div class="col-4 name d-flex justify-content-center align-self-center">
+                        <h2>ALYSSA BAUTISTA</h2>
+                    </div>
+                    <div class="col-4 d-flex justify-content-start align-self-center">
+                        <img class="rounded-circle" src="images/alyssa.jpeg" alt="" width="250">
+                    </div>
+                </div>
+                <img src="images/headspace.png" alt="">
             </div>
         </footer>
         <!-- Page-specific code -->

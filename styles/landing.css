@@ -1,70 +1,63 @@
 /* Landing Page CSS */
 
+
+/* LOGIN FORM */
 .login {
-    margin-top: 10rem;
-    margin-bottom: 10rem;
     border-style: solid;
-    padding: 3rem;
-    font-family: impact, sans-serif;
     background-color: rgb(255, 255, 255);
-    box-shadow: 5px 5px grey;
-    height: 70%;
+    box-shadow: 7px 7px #ffbd59;
+    margin: 0 20% 2% 20%;
+    font-family: "montserrat", sans-serif;
+
 }
 
-.single-input{
+ .single-input{
     display: flex;
+    border-style: solid;
 }
 
 .single-input i{
-    padding: 16px 16px;
+    border-style: none solid none none;
+    padding: 16px;
 }
 
-.moonImg {
-    z-index: -1;
-    display: flex;
-    position: absolute;
-    left: 65%;
-    top: 16.5%;
+#loginButton {
+    height: 40px;
 }
 
-.astroBoy {
-    z-index: -1;
-    display:flex;
-    position: fixed;
-    left: 32.5%;
-    top: 16.5%;
-}
+/* ABOUT SECTION */
 
-.aboutSection {
-    display: flex;
-    z-index: 1;
+.aboutTitle {
     font-family: impact, sans-serif;
-    position: relative;
-    top: 45%;
-    left: 35%;
+    -webkit-text-stroke: 1px black;
+    color: #ffbd59;
+    margin-top: 20%;
+    margin-left: 10%;
+    font-size: 75px;
 }
 
 .aboutP {
-    display:flex;
-    z-index: 1;
     font-family: "montserrat", sans-serif;
-    position: relative;
-    width: 50%;
-    top: 45%;
-    left: 35%;
-    margin-bottom: 20rem;
+    width: 60%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+} 
+
+.aboutDiv {
+    background-image: url("../images/moonAndStars.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    font-size: larger;
 }
 
-.midSection {
-    margin-top: 5rem;
-    display: flex;
-    
+/* FOOTER */
+
+footer {
+    color:#ffbd59;
+    font-family: "monsterrat", sans-serif;
+    padding-top: 5rem;
 }
-
-/*  MEDIA QUERY  */
-
-@media screen and (max-width: 800px) {
-    body {
-        background-color: black;
-    }
+.rounded-circle {
+   filter: grayscale(100%);
+   height: 200px;
 }

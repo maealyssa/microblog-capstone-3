@@ -26,15 +26,18 @@ const displayPosts = async () => {
   const posts = await fetchPosts();
   for (const { createdAt, likes, text, username } of posts)
     qS('#posts').innerHTML += `
-      <div>
-        <span>${username}</span>
-        <span>${text}</span>
+      <div class="col-12">
+        <div class="postBox container p-4">
+          <div id="titleContainer">
+            <h4 id="userTitle">@${username}</h4>
+          </div>
+          <br>
+          <p class="lead text-center">${text}</p>
+          <hr>
+          <span class="text-muted"> <i class="fa fa-heart"></i> ${likes.length} Likes ${createdAt}</span>
+        </div>
       </div>
-      <div>
-        <span>${createdAt}</span>
-        <span>${likes.length}</span>
-      </div>
-      <br>
+
     `;
 };
 
