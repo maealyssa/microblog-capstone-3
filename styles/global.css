@@ -11,3 +11,13 @@ body {
     color: #ffbd59;
     font-size: x-large;
 }
+#SignUp{
+    border-style: solid;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 7px 7px #ffbd59;
+    margin-bottom: 2%;
+    font-family: "montserrat", sans-serif;
+}
+#fullName{
+    border-style: solid;
+}
