@@ -1,52 +1,97 @@
-"use strict";
+"use strict"
 
-const qS = document.querySelector.bind(document);
-
-window.onload = async () => {
-  // await register(); 
-  displayPosts();
-  qS('#logout').onclick = logout;
-};
-
-// temporary function just so I can register users for now
-// const register = async () => {
-//   fetch('https://microbloglite.herokuapp.com/api/users', {
-//     method: 'POST',
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify({
-//       'username': 'malzahar', // temp values for testing
-//       'fullName': 'user1',
-//       'password': 'malzahar'
-//     })
-//   }).then(resp => console.log('POST RESP:', resp))
-//     .catch(err => console.log('ERR:', err))
-// };
-
-const displayPosts = async () => {
-  const posts = await fetchPosts();
-  for (const { createdAt, likes, text, username } of posts)
-    qS('#posts').innerHTML += `
-      <div>
-        <span>${username}</span>
-        <span>${text}</span>
-      </div>
-      <div>
-        <span>${createdAt}</span>
-        <span>${likes.length}</span>
-      </div>
-      <br>
-    `;
-};
+const getCurrentUser = () => {
+    const user = JSON.parse(localStorage.getItem('login-data'));
+    return user ? user.username : null;
+}
 
 const fetchPosts = async () => {
-  // console.log('getLoginData():', getLoginData())
+    try {
+        const resp = await fetch('https://microbloglite.herokuapp.com/api/posts', {
+            headers: { Authorization: `Bearer ${getLoginData().token}` }
+        });
+        return resp.json();
+    } catch(err) {
+        console.log(err);
+        return [];
+    }
+};
+
+const displayPosts = async () => {
+    const posts = await fetchPosts();
+    const postsFeed = document.getElementById('postsFeed');
+    const currentUser = getCurrentUser();
+
+    for (const { createdAt, likes, text, username } of posts) {
+        if (username === currentUser) {
+            const postCard = document.createElement('div');
+            postCard.className = 'card mb-3'; 
+            postCard.innerHTML = `
+                <div class="card-body">
+                    <h5 class="card-title">${username}</h5>
+                    <p class="card-text">${text}</p>
+                    <p class="card-text">
+                        <small class="text-muted">${new Date(createdAt).toLocaleString()}</small>
+                    </p>
+                    <p class="card-text">${likes.length} likes</p>
+                </div>
+            `;
+            postsFeed.appendChild(postCard);
+        }
+    }
+};
+
+const fetchUsers = async () => {
+    try {
+        const resp = await fetch('https://microbloglite.herokuapp.com/api/users' ,{
+            headers: { Authorization: `Bearer ${getLoginData().token}` }
+        });
+        return resp.json();
+    } catch(err) {
+        console.log(err);
+        return [];
+    }
+};
+
+const displayUsers = async () => {
+    const users = await fetchUsers();
+    const usersColumn = document.getElementsByClassName('rightColumn')[0];
+
+    for (const {username} of users) {
+        const userCard = document.createElement('div');
+        userCard.className = 'card my-2';
+        userCard.innerHTML = `
+            <div class="d-flex align-items-center">
+                <img class="rounded-circle mr-3" src="images/stockImage.jpg" style="width: 50px; height: 50px;">
+                <h5 class="m-0">${username}</h5>
+            </div>
+        `;
+        usersColumn.appendChild(userCard);
+    }
+};
+
+const submitPost = async () => {
+  const postBody = document.getElementById('postBody').value;
+  const data = {
+    text: postBody,
+    username: getCurrentUser()
+  };
   try {
-    const resp = await fetch('https://microbloglite.herokuapp.com/api/posts', {
-      headers: { Authorization: `Bearer ${getLoginData().token}` }
-    });
-    return resp.json();
+    const response = await fetch('https://microbloglite.herokuapp.com/api/posts',{
+      method: 'POST',
+      headers: {
+        'content-Type': 'application/json',
+        Authorization: `Bearer ${getLoginData().token}` },
+        body: JSON.stringify(data)
+    }); 
+console.log(response)
   } catch(err) {
     console.log(err);
-    return [];
-  }
+    alert('something went wrong while posting')
+  };
+}
+
+window.onload = () => {
+    displayPosts();
+    displayUsers();
 };
