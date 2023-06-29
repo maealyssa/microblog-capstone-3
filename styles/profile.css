@@ -39,7 +39,7 @@ body, .navbar, .container-fluid {
   margin: 15px;
   transition: transform 0.2s; /* Animation */
   border-style: solid black;
-  padding: 3rem;
+  padding: 1rem;
   background-color: rgb(255, 255, 255);
   box-shadow: 7px 7px #ffbd59;
   z-index: 2;
@@ -47,7 +47,11 @@ body, .navbar, .container-fluid {
 }
 
 .card.mb-3 {
-  border-style: solid black;
+  width: 75%;
+  margin: auto;
+  margin-bottom: 2rem;
+  border-style: solid;
+  border-color: black;
   font-family: "montserrat", sans-serif;
 }
 
@@ -121,6 +125,10 @@ body, .navbar, .container-fluid {
   color: white;
 }
 
+.about-meText, .photosText, .friendsText{
+  margin-top: 15px;
+}
+
 .image-circle {
   width: 60px; 
   height: 60px;
@@ -154,11 +162,28 @@ body, .navbar, .container-fluid {
   margin-bottom: 5px;
 }
 
+.Messenger-font{
+  font-family: "montserrat", sans-serif;
+  margin-top: 10px;
+  justify-content: center;
+}
+
 .search-bar {
   position: sticky;
   bottom: 0;
-  width: 100%;
+  width: 105%;
   padding: 10px;
   background: #f8f9fa;
   border-top: 1px solid #dee2e6;
+  margin: 0px; 
+  z-index: 2;
+}
+
+.post-card{
+  width: 75%;
+  margin: auto;
+}
+
+.clickable-card {
+  cursor: pointer;
 }

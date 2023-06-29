@@ -97,3 +97,9 @@ window.onload = () => {
     displayUsers();
 };
 
+const updateUser = () => {
+  const userNameElement = document.querySelector('.user-name');
+  if (userNameElement) {
+    userNameElement.innerText = getCurrentUser();
+  }
+};
