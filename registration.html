@@ -2,31 +2,102 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    <!-- Global CSS (CSS rules you want applied to all pages) -->
+    <link rel="stylesheet" href="styles/global.css">
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="styles/landing.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Lora&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <header>
-    <!-- place navbar here -->
-    <nav class="navbar navbar-expand navbar-light bg-light">
-        <div class="nav navbar-nav">
-            <a class="nav-item nav-link" href="index.html" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
-            <a class="nav-item nav-link active" href="registration.html">Register</a>
-            <a class="nav-item nav-link" href="posts.html">Posts</a>
-            <a class="nav-item nav-link" href="profile.html">Profile</a>
-        </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black static-top">
+      <div class="container">
+          <img src="images/headSpace.png" alt="..." height="100">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item p-2">
+                  <a class="nav-link" href="index.html"><i class="fa fa-home"></i></a>
+                </li>
+                <li class="nav-item p-2">
+                  <a class="nav-link" href="registration.html"><i class="fa fa-user-plus"></i></a>
+                </li>
+                <li class="nav-item p-2">
+                  <a class="nav-link" href="posts.html"><i class="fa fa-commenting-o"></i></a>
+                </li>
+                <li class="nav-item p-2">
+                  <a class="nav-link" href="profile.html"><i class="fa fa-user-circle-o"></i></a>
+                </li>
+              </ul>
+          </div>
+      </div>
     </nav>
   </header>
-  <main>
 
+  <main>
+    <section class="h-100 bg-dark">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col">
+            <div class="card card-registration my-4">
+              <div class="row g-0">
+                <div class="col-xl-6 d-none d-xl-block">
+                  <!--add img-->
+                  <!-- <img src="..." alt=" photo" class="img-fluid"
+        style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" /> -->
+                </div>
+                <div id="registrationForm" class="col-xl-6">
+                  <div class="card-body p-md-5 text-black">
+                    <h3 class="mb-5 text-uppercase">Sign Up</h3>
+
+                    <div class="row">
+                      <div class="form-outline mb-4">
+                        <div class="form-outline">
+                          <input type="text" id="fullName" class="form-control form-control-lg" />
+                          <label class="form-label" for="fullName">Full name</label>
+                        </div>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <input type="text" id="UserName" class="form-control form-control-lg" placeholder="username" />
+
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <input type="text" id="password" class="form-control form-control-lg" />
+                        <label class="form-label" for="password">Password</label>
+                      </div>
+
+                      <div class="d-flex justify-content-pt-3">
+                        <button type="submit" onclick="newUser()" class="btn btn-warning btn-lg ms-2">Submit
+                          form</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+    </section>
   </main>
   <footer>
     <!-- place footer here -->
@@ -34,11 +105,16 @@
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
+    </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
+
+  <script src="scripts/registration.js"></script>
+
+
+
 </body>
 
 </html>

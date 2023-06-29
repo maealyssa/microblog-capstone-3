@@ -2,23 +2,16 @@
 
 "use strict";
 
-const loginForm = document.querySelector("#login");
+window.onload = () => {
+    const form = document.getElementById("login");
 
-loginForm.onsubmit = function (event) {
-    // Prevent the form from refreshing the page,
-    // as it will do by default when the Submit event is triggered:
-    event.preventDefault();
+    form.onsubmit = e => {
+        e.preventDefault();
 
-    // We can use loginForm.username (for example) to access
-    // the input element in the form which has the ID of "username".
-    const loginData = {
-        username: loginForm.username.value,
-        password: loginForm.password.value,
+        const username = document.getElementById("inputUserName").value;
+        const password = document.getElementById("inputPassword").value;
+
+        login({ username, password });
+        document.getElementById("loginButton").disabled = true;
     }
-
-    // Disables the button after the form has been submitted already:
-    loginForm.loginButton.disabled = true;
-
-    // Time to actually process the login using the function from auth.js!
-    login(loginData);
-};
+}
