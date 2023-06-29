@@ -96,7 +96,7 @@ body, .navbar, .container-fluid {
 }
 
 .image-circle {
-  width: 60px; /* Adjust to desired size */
+  width: 60px; 
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
@@ -106,7 +106,7 @@ body, .navbar, .container-fluid {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: gray;
+  background-color: goldenrod;
   color: white;
   font-size: 0.9em;
   display: flex;
