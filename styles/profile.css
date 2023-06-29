@@ -37,7 +37,7 @@ body, .navbar, .container-fluid {
 
 .card {
   margin: 15px;
-  transition: transform 0.2s; /* Animation */
+  transition: transform 0.2s;
   border-style: solid black;
   padding: 1rem;
   background-color: rgb(255, 255, 255);
@@ -105,7 +105,7 @@ body, .navbar, .container-fluid {
 }
 
 .user-name {
-  font-size: 1.5em; /* Adjust to make the username smaller */
+  font-size: 1.5em;
   font-family: "montserrat", sans-serif;
   color: white;
 }
