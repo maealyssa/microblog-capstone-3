@@ -1,0 +1,52 @@
+body, .navbar, .container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-tabs .nav-link {
+  color: #888;
+  font-size: 0.8em;
+  border: none !important;
+}
+
+.nav-tabs .nav-link::before {
+  content: attr(data-count);
+  color: #000;
+  font-size: 1.2em;
+  font-weight: bold;
+  display: block;
+}
+
+.nav-tabs .nav-item:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+
+#center-col {
+  background-image: url('/video/HD-wallpaper-moon-surface-astronaut-earth-galaxy-stars-space.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px;
+}
+
+.card {
+  margin: 15px;
+}
+
+.bg-gold {
+  background-color: gold;
+}
+
+.nav-link.nav-text {
+  font-size: 14px; /* Adjust as needed */
+}
+
+.nav-icon {
+  font-size: 10px; /* Adjust as needed */
+}
+
+.rounded-circle {
+  width: 120px; /* Adjust as needed */
+  height: 120px; /* This should be the same as the width to make a perfect circle */
+  border-radius: 50%;
+  object-fit: cover; /* This will ensure your image covers the whole area of the div without distortion */
+}
