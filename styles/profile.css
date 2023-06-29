@@ -111,5 +111,7 @@ body, .navbar, .container-fluid {
   font-size: 0.9em;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center ;
+  margin-top: -0px;
 }
+
