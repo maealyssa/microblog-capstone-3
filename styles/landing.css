@@ -1,70 +1,39 @@
 /* Landing Page CSS */
 
 .login {
-    margin-top: 10rem;
-    margin-bottom: 10rem;
     border-style: solid;
-    padding: 3rem;
+    border-width: 5px;
     font-family: impact, sans-serif;
     background-color: rgb(255, 255, 255);
-    box-shadow: 5px 5px grey;
-    height: 70%;
+    box-shadow: 7px 7px #ffbd59;
+    margin: 8% 8% 10% 10%;
+    box-sizing: content-box;
 }
 
-.single-input{
+ .single-input{
     display: flex;
+    margin-bottom: 20px;
 }
 
 .single-input i{
     padding: 16px 16px;
 }
 
-.moonImg {
-    z-index: -1;
-    display: flex;
-    position: absolute;
-    left: 65%;
-    top: 16.5%;
-}
-
-.astroBoy {
-    z-index: -1;
-    display:flex;
-    position: fixed;
-    left: 32.5%;
-    top: 16.5%;
-}
-
-.aboutSection {
-    display: flex;
-    z-index: 1;
+.aboutTitle {
     font-family: impact, sans-serif;
-    position: relative;
-    top: 45%;
-    left: 35%;
+    margin-top: 30%;
+    margin-left: 20%;
 }
 
 .aboutP {
-    display:flex;
-    z-index: 1;
     font-family: "montserrat", sans-serif;
-    position: relative;
     width: 50%;
-    top: 45%;
-    left: 35%;
-    margin-bottom: 20rem;
-}
+    margin-left: 20%;
+} 
 
-.midSection {
-    margin-top: 5rem;
-    display: flex;
-    
-}
-
-/*  MEDIA QUERY  */
-
-@media screen and (max-width: 800px) {
-    body {
-        background-color: black;
-    }
+.aboutDiv {
+    background-image: url("../images/moonAndStars.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    height: auto;
 }

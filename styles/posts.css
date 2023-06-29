@@ -1,1 +1,28 @@
 /* Posts Page CSS */
+
+
+.nav-item .nav-link {
+    text-align: center;
+    color: #ffbd59;
+    font-size: x-large;
+    font-family: "montserrat", sans-serif;
+}
+
+.postBox {
+    border-style: solid;
+    padding: 3rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 7px 7px #ffbd59;
+    z-index: 2;
+}
+
+.spaceShip {
+    left: 4%;
+    z-index: -1;
+}
+
+#userTitle {
+    font-family: "montserrat", sans-serif;
+    letter-spacing: 2px;
+    font-weight: bold;
+}

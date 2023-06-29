@@ -34,7 +34,7 @@
     <body>
         <header>
             <!-- Navigation -->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-black static-top">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-black">
                 <div class="container">
                     <img src="images/headSpace.png" alt="..." height="100">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,13 +63,11 @@
         <main>
 
             <!-- SIGN IN FORM -->
-            <div class="container-fluid d-flex">
-                <img class="moonImg" src="images/moonAndStars.png" alt="" height="500">
-                <img class="astroBoy" src="images/astronaut.png" height="150">
+            <div class="mainBody container-fluid">
                 <div class="row">
-                    <div class="login col-4 m-4 text-center">
-                        <h2 class="mb-4">Back?</h2>
-                        <form id="login">
+                    <div class="col col-lg-6 col-sm-12 p-4 text-center">
+                        <form class="login p-4" id="login">
+                            <h2>Back?</h2>
                             <div class="single-input mb-4">
                                 <span><i class="fa fa-user"></i></span>
                                 <input type="text" class="form-control" id="inputUserName" placeholder="username" required>
@@ -80,12 +78,13 @@
                                 <input type="password" class="form-control" id="inputPassword" placeholder="password" required>
                                 <!-- <div class="invalid-feedback">Opps! You have entered an invalid password.</div> -->
                             </div>
+                            <img class="astroBoy" src="images/astronaut.png" height="150">
                             <button id="loginButton" type="submit" class="btn btn-outline-dark">log in</button>
                         </form>
                     </div>
                     <!-- ABOUT INFO -->
-                    <div class="col">
-                        <h1 class="aboutSection">About Head Space</h1>
+                    <div class="col col-lg-6 col-sm-12 aboutDiv">
+                        <h1 class="aboutTitle">About Head Space</h1>
                         <p class="aboutP">Picture this: four individuals with an excessive amount of forehead space and an uncontrollable urge to spread creative chaos.  We're here to shoot up some much-needed humor and artistic mayhem into your digital lives.</p>
                     </div>
                 </div>
@@ -93,8 +92,8 @@
         </main>
 
         <footer>
-            <div class="midSection container-fluid bg-black p-4">
-                <img src="images/headspace.png" alt="" srcset="" height="200">
+            <div class="container-fluid bg-black p-2">
+                <img src="images/headspace.png" alt="" srcset="" height="100">
             </div>
         </footer>
         <!-- Page-specific code -->
